@@ -9,8 +9,8 @@ import org.jlab.jnp.hipo4.data.Schema
 import wagon.DVCSWagon
 /////////////////////////////////////////////////////////////////////
 
-// def problematicRuns = [45040104, 45167466, 90664027, 45282893, 27046060, 27196869, 69221029, 41957238, 139439623, 132085813, 60462487, 107004602, 107025707, 71579058, 128424051, 85423888, 50002416, 93204648, 29114644, 144625985, 32764272, 81704849, 79539897, 46208798, 46297015, 46460162, 46555534, 86511011, 81850085, 81988334]
-def problematicRun = 46208798
+// def problematicEvents = [45040104, 45167466, 90664027, 45282893, 27046060, 27196869, 69221029, 41957238, 139439623, 132085813, 60462487, 107004602, 107025707, 71579058, 128424051, 85423888, 50002416, 93204648, 29114644, 144625985, 32764272, 81704849, 79539897, 46208798, 46297015, 46460162, 46555534, 86511011, 81850085, 81988334]
+def problematicEvent = 46208798
 
 args.each{fname->
   def reader = new HipoReader()
@@ -28,7 +28,7 @@ args.each{fname->
     particle = jnp_event.read(particle)
     config = jnp_event.read(config)
     def eventNumber = config.getInt("event", 0)
-    if (eventNumber == problematicRun){
+    if (eventNumber == problematicEvent){
       println("event "+eventNumber+ " is detected in the file " + fname)
       particle.show()
       if (dvcswagon.processDataEvent(jnp_event, schema)) println("It is a DVCS candidate!")
