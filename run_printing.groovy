@@ -29,7 +29,7 @@ args.each{fname->
     config = jnp_event.read(config)
     def eventNumber = config.getInt("event", 0)
     if (eventNumber == problematicEvent){
-      println("event "+eventNumber+ " is detected in the file " + fname)
+      println("The event "+eventNumber+ " is detected in the file " + fname+".")
       particle.show()
       if (dvcswagon.processDataEvent(jnp_event, schema)) println("It is a DVCS candidate!")
     }
