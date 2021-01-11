@@ -2,7 +2,7 @@ package wagon;
 
 import org.jlab.clas.physics.LorentzVector
 import org.jlab.clas.physics.Vector3
-
+import org.jlab.clas.pdg.PDGDatabase
 import org.jlab.jnp.hipo4.data.Bank;
 import org.jlab.jnp.hipo4.data.Event;
 import org.jlab.jnp.hipo4.data.SchemaFactory;
@@ -16,8 +16,8 @@ import org.jlab.jnp.hipo4.data.SchemaFactory;
 
 class DVCSWagon {
 
-	def targetMass = 0.938
-	def beamEnergy = 10.6
+	def targetMass = PDGDatabase.getParticleMass(2212)
+	def beamEnergy = 10.2
 
 	def Vangle(Vector3 v1, Vector3 v2){
 		def res=0;
