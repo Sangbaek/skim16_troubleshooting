@@ -2,5 +2,8 @@
 
 To run troubleshooting,
 ```
-run-groovy run_printing.groovy /volatile/clas12/rg-a/production/pass0/Sping19/pass1Test2/dst/recon/006715/rec_clas_006715.evio.00590-00594.hipo /volatile/clas12/rg-a/production/pass0/Sping19/pass1Test8/calib/train/skim16/skim16_006715.hipo 
+
+run-groovy run_printing.groovy /cache/clas12/rg-a/production/recon/fall2018/torus-1/pass1/v0/dst/recon/005247/rec_clas_005247.evio.01185-01189.hipo  /volatile/clas12/rg-a/production/recon/fall2018/torus-1/pass1/v1.1/calib/train/DVCSWagon/DVCSWagon_005247.hipo
+
+
 ```

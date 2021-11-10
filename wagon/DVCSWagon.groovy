@@ -17,7 +17,7 @@ import org.jlab.jnp.hipo4.data.SchemaFactory;
 class DVCSWagon {
 
 	def targetMass = PDGDatabase.getParticleMass(2212)
-	def beamEnergy = 10.2
+	def beamEnergy = 10.604
 
 	def Vangle(Vector3 v1, Vector3 v2){
 		def res=0;
@@ -111,6 +111,19 @@ class DVCSWagon {
 												&& VmissAll.px()*VmissAll.px() + VmissAll.py()*VmissAll.py() < 0.75
 												&& Vangle( VG.vect() , VmissG.vect() ) < 7.5)
 												;
+											if (hasDVCS) {
+												println("e_mom, p_ene, g_mom, Q2, W, ME, MM_eg, MM_epg, MPt^2, theta_gg")
+												print(e_mom+"   ")
+												print(p_ene+"   ")
+												print(g_mom+"   ")
+												print(-Q.mass2()+"   ")
+												print(W.mass()+"   ")
+												print(VmissAll.e()+"   ")
+												print(VmissP.mass()+"   ")
+												print(VmissAll.mass2()+"   ")
+												print(VmissAll.px()*VmissAll.px() + VmissAll.py()*VmissAll.py()+"   ")
+												println(Vangle( VG.vect(), VmissG.vect())+"   ")
+											}
 										}
 									}
 								}
